@@ -19,3 +19,9 @@
 
 # Go workspace file
 go.work
+
+# volumes of docker containers for persistence
+volumes
+
+# the binary built for the server 
+main

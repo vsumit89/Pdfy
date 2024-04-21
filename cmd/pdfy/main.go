@@ -7,6 +7,7 @@ import (
 	"pdfy/internal/domain/service"
 	"pdfy/internal/infrastructure/http"
 	"pdfy/internal/infrastructure/http/handlers"
+	"pdfy/pkg/logger"
 )
 
 func main() {
@@ -17,6 +18,11 @@ func main() {
 	allDeps := &handlers.HandlerDeps{
 		TemplateSvc: templateSvc,
 	}
+
+	logger.InitLogger(
+		logger.WithLevel(logger.INFO),
+		logger.WithLogFmt(logger.JSON),
+	)
 
 	// handlerSet contains the reference to all the handlers objects
 	// this will be used to bind the handlers to there respective handlers
